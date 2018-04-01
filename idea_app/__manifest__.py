@@ -2,6 +2,6 @@
 	'name':'Vote Application',
 	'description': 'Manage your Voting.',
 	'author': 'Fakhri Waliyyuddin Nugraha',
-	'depends': ['base','mail'],
+	'depends': ['base','mail','hr'],
 	'data': ['views/vote_menu.xml','views/vote_view.xml'],
 }
