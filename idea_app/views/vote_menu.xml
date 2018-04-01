@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<odoo>
+	<!-- Action to open vote_app list -->
+	<act_window id="action_vote_app"
+		name="Ideas"
+		res_model="vote.app"
+		view_mode="tree,form"/>
+	<act_window id="action_idea_type"
+		name="Ideas Type"
+		res_model="idea.type"
+		view_mode="tree,form"/>
+	
+	<!-- Menu item to open vote app list -->
+	<menuitem id="menu_vote_app"
+		name="Ideas"
+		action="action_vote_app"
+		/>
+
+	<menuitem id="side_menu_emp_ideas" 
+		name="Employess Ideas"
+		parent="menu_vote_app"
+		/>
+	<menuitem id="side_menu_ideas"
+		name="Ideas"
+		action="action_vote_app"
+		parent="side_menu_emp_ideas"
+		/>
+		
+	<menuitem id="side_menu_configuration"
+		name="Configuration"
+		parent="menu_vote_app"
+		/>	
+	<menuitem id="side_menu_idea_type"
+		name="Idea Types"
+		parent="side_menu_configuration"
+		action="action_idea_type"
+		/>
+</odoo>

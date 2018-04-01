@@ -1,1 +1,1 @@
-from . import idea_model
+from . import vote_model

@@ -1,8 +1,7 @@
 {
-	'name': 'Ideas',
-	'description': 'Create Vote Our Ideas.',
-	'author': 'Fachri Hammad F.P.',
-	'depends': ['base'],
-	'application': True,
-	'data': [ 'views/idea_view.xml','views/idea_menu.xml',],
+	'name':'Vote Application',
+	'description': 'Manage your Voting.',
+	'author': 'Fakhri Waliyyuddin Nugraha',
+	'depends': ['base','mail'],
+	'data': ['views/vote_menu.xml','views/vote_view.xml'],
 }
