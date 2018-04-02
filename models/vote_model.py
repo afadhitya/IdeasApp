@@ -13,6 +13,7 @@ class VoteApp(models.Model):
 	date_deadline = fields.Date('Deadline', required=True)
 	idea_id = fields.Many2one('idea.type',string='Idea Type')
 	description = fields.Text('Notes',required=True)
+	vote_list = fields.Many2many('wizard.vote')
 	state = fields.Selection([
         ('new', 'New'),
         ('waiting', 'Waiting for Approval'),
