@@ -24,11 +24,13 @@ class VoteApp(models.Model):
 
 	@api.multi
 	def do_approve(self):
+		self.write({'state': 'approved'})
 		return True
 
 		
 	@api.multi
 	def do_reject(self):
+		self.write({'state': 'reject'})
 		return True
 
 	@api.multi
@@ -36,14 +38,11 @@ class VoteApp(models.Model):
 		self.write({'state': 'waiting'})
 		return True
 
+	@api.multi
+	def do_give_vote(self):
+		return True
 
-class IdeaType(models.Model):
-	_name = 'idea.type'
-	_description = 'Idea Type'
-	_inherit = ['mail.thread']
-	_order = "name"
-
-	name = fields.Char('Name', required=True)
-	min_vote = fields.Integer(string='Minimum Vote',required=True)
-	max_vote = fields.Integer(string='Maximum Vote',required=True)
-	total_ideas = fields.Integer(string='Total Ideas',required=True)
+	@api.multi
+	def do_closed(self):
+		self.write({'state': 'closed'})
+		return True
