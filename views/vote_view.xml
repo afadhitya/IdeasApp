@@ -92,6 +92,22 @@
 			</tree>
 		</field>
 	</record>
+	
+	<record id="view_filter_vote_app" model="ir.ui.view">
+	    <field name="name">Idea Vote Form</field>
+	    <field name="model">vote.app</field>
+	    <field name="arch" type="xml">
+      		<search>
+	        	<field name="name"/>
+	        	<filter string="New" domain="[('state','=','new')]"/>
+	        	<filter string="Waiting" domain="[('state','=','waiting')]"/>
+	        	<filter string="Approved" domain="[('state','=','approved')]"/>
+	        	<filter string="Closed" domain="[('state','=','closed')]"/>
+	        	<filter string="Reject" domain="[('state','=','reject')]"/>
+	      	</search>
+	    </field>
+	 </record>
+
 	<record id="view_tree_vote_list" model="ir.ui.view">
 		<field name="name">Vote List Tree</field>
 		<field name="model">wizard.vote</field>
