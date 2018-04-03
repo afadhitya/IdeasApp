@@ -29,10 +29,12 @@
 	<menuitem id="side_menu_configuration"
 		name="Configuration"
 		parent="menu_vote_app"
+		groups="hr.group_hr_manager"
 		/>	
 	<menuitem id="side_menu_idea_type"
 		name="Idea Types"
 		parent="side_menu_configuration"
 		action="action_idea_type"
+		groups="hr.group_hr_manager"
 		/>
 </odoo>
