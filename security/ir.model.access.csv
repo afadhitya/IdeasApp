@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_group_user,task.user,model_vote_app,base.group_user,1,1,1,1
-access_group_user2,task.user2,model_idea_type,base.group_user,1,0,0,0
+access_group_user1,task.user1,model_vote_app,hr.group_hr_user,1,1,1,1
+access_group_user2,task.user2,model_idea_type,hr.group_hr_user,1,0,0,0
+access_group_user3,task.user3,model_vote_app,hr.group_hr_manager,1,1,0,1
+access_group_user4,task.user4,model_idea_type,hr.group_hr_manager,1,1,1,1

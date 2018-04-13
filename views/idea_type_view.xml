@@ -13,7 +13,6 @@
 							<field name="total_ideas"/>
 						</group>
 						<group name="group_right">
-							
 						</group>
 					</group>
 					<group name="group_bottom">
@@ -31,6 +30,7 @@
 			</form>
 		</field>
 	</record>
+
 	<record id="view_tree_idea_types" model="ir.ui.view">
 		<field name="name">Idea Types Tree</field>
 		<field name="model">idea.type</field>

@@ -15,9 +15,8 @@
 		name="Ideas"
 		action="action_vote_app"
 		/>
-
 	<menuitem id="side_menu_emp_ideas" 
-		name="Employess Ideas"
+		name="Employee Ideas"
 		parent="menu_vote_app"
 		/>
 	<menuitem id="side_menu_ideas"
@@ -25,9 +24,8 @@
 		action="action_vote_app"
 		parent="side_menu_emp_ideas"
 		/>
-		
 	<menuitem id="side_menu_configuration"
-		name="Configuration"
+		name="Configurations"
 		parent="menu_vote_app"
 		groups="hr.group_hr_manager"
 		/>	

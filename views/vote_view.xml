@@ -1,4 +1,5 @@
 <odoo>
+	
 	<record id="view_open_wizard_form_vote" model="ir.ui.view">
 		 <field name="name">Employee Vote</field>
 		 <field name="model">wizard.vote</field>
@@ -19,6 +20,7 @@
 			</form>
 		</field>
 	</record>
+
 	<record id="action_open_wizard_vote" model="ir.actions.act_window">
 		<field name="name">Employee Vote</field>
 		<field name="res_model">wizard.vote</field>
@@ -26,6 +28,7 @@
 		<field name="view_mode">form</field>
 		<field name="target">new</field>
 	</record>
+
 	<record id="view_form_vote_app" model="ir.ui.view">
 		<field name="name">Idea Vote Form</field>
 		<field name="model">vote.app</field>
@@ -33,45 +36,43 @@
 			<form string="Ideas">
 				<header>
 				<!-- Button go here -->
-				<button name="do_post_idea" type="object" string="Post Idea for Voting" class="btn-primary" states="new"/>
-				<button name="do_approve" type="object" string="Approve" class="btn-primary" states="waiting" groups="hr.group_hr_manager"/>
-				<button name="do_reject" type="object" string="Reject" class="btn-primary" states="waiting" groups="hr.group_hr_manager"/>
-				<button name="%(action_open_wizard_vote)d" type="action" string="Give Vote" class="btn-primary" states="approved"/>
-				<button name="do_closed" type="object" string="Close" class="btn-primary" states="approved"/>
-				<field name="state" widget="statusbar" statusbar_visible="new,waiting,approved,closed" on_change="1" modifiers="{'readonly': true}"/>
+					<button name="do_post_idea" type="object" string="Post Idea for Voting" class="btn-primary" states="new"/>
+					<button name="do_approve" type="object" string="Approve" class="btn-primary" states="waiting" groups="hr.group_hr_manager"/>
+					<button name="do_reject" type="object" string="Reject" class="btn-primary" states="waiting" groups="hr.group_hr_manager"/>
+					<button name="%(action_open_wizard_vote)d" type="action" string="Give Vote" class="btn-primary" states="approved" groups="hr.group_hr_user"/>
+					<button name="do_closed" type="object" string="Close" class="btn-primary" states="approved" groups="hr.group_hr_manager"/>
+					<field name="state" widget="statusbar" statusbar_visible="new,waiting,approved,closed" on_change="1" modifiers="{'readonly': true}"/>
 				</header>
 				<sheet>
 				<!-- Content goes here: -->
-				<div class="oe_title">
-					<group name="group_top">
-						
+					<div class="oe_title">
+						<group name="group_top">
 							<label for="name" string="Title"/>
 							<h1>
 								<field name="name"/>
 							</h1>
-						
-					</group>
-				</div>
-				<group name="group_bottom">
-					<group name="group_left">
+						</group>
+					</div>
+					<group name="group_bottom">
+						<group name="group_left">
 							<field name="employee_ids"/>
 							<field name="date_create"/>
 							<field name="company_id"/>
+						</group>
+						<group nama="group_right">
+							<field name="department_id"/>
+							<field name="date_deadline"/>
+							<field name="idea_id"/>
+						</group>
 					</group>
-					<group nama="group_right">
-						<field name="department_id"/>
-						<field name="date_deadline"/>
-						<field name="idea_id"/>
-					</group>
-				</group>
-				<notebook>
-					<page string="Details">
-						<field name="description"/>
-					</page>
-					<page string="Employee Votes">
-						<field name="vote_list" widget="handle"/>
-					</page>
-				</notebook>
+					<notebook>
+						<page string="Details">
+							<field name="description"/>
+						</page>
+						<page string="Employee Votes">
+							<field name="vote_list" widget="handle"/>
+						</page>
+					</notebook>
 				</sheet>
 				<div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
@@ -80,6 +81,7 @@
 			</form>
 		</field>
 	</record>
+
 	<record id="view_tree_vote_app" model="ir.ui.view">
 		<field name="name">Idea Vote Tree</field>
 		<field name="model">vote.app</field>
@@ -118,4 +120,5 @@
 			</tree>
 		</field>
 	</record>
+
 </odoo>
