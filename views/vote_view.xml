@@ -7,6 +7,7 @@
 		 <field name="arch" type="xml">
 			 <form string="Employee Vote">
 				<group name="group_top">
+					<field name="ideas_id"/>
 					<field name="priority" widget="priority"/>
 				</group>
 				<group name="group_bottom">
@@ -21,13 +22,13 @@
 		</field>
 	</record>
 
-	<record id="action_open_wizard_vote" model="ir.actions.act_window">
+	<!--<record id="action_open_wizard_vote" model="ir.actions.act_window">
 		<field name="name">Employee Vote</field>
 		<field name="res_model">wizard.vote</field>
 		<field name="view_type">form</field>
 		<field name="view_mode">form</field>
 		<field name="target">new</field>
-	</record>
+	</record> -->
 
 	<record id="view_form_vote_app" model="ir.ui.view">
 		<field name="name">Idea Vote Form</field>
@@ -39,7 +40,7 @@
 					<button name="do_post_idea" type="object" string="Post Idea for Voting" class="btn-primary" states="new"/>
 					<button name="do_approve" type="object" string="Approve" class="btn-primary" states="waiting" groups="hr.group_hr_manager"/>
 					<button name="do_reject" type="object" string="Reject" class="btn-primary" states="waiting" groups="hr.group_hr_manager"/>
-					<button name="%(action_open_wizard_vote)d" type="action" string="Give Vote" class="btn-primary" states="approved" groups="hr.group_hr_user"/>
+					<button name="vote_wizard" type="object" string="Give Vote" class="btn-primary" states="approved" groups="hr.group_hr_user"/>
 					<button name="do_closed" type="object" string="Close" class="btn-primary" states="approved" groups="hr.group_hr_manager"/>
 					<field name="state" widget="statusbar" statusbar_visible="new,waiting,approved,closed" on_change="1" modifiers="{'readonly': true}"/>
 				</header>
