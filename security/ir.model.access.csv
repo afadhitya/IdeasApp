@@ -3,4 +3,3 @@ access_group_user1,task.user1,model_vote_app,hr.group_hr_user,1,1,1,1
 access_group_user2,task.user2,model_idea_type,hr.group_hr_user,1,0,0,0
 access_group_user3,task.user3,model_vote_app,hr.group_hr_manager,1,1,0,1
 access_group_user4,task.user4,model_idea_type,hr.group_hr_manager,1,1,1,1
-access_group_user5,task.user5,hr.model_hr_department,hr.group_hr_manager,1,1,1,1

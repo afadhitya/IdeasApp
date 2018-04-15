@@ -6,7 +6,7 @@
 		res_model="vote.app"
 		view_mode="tree,form"/>
 	<act_window id="action_idea_type"
-		name="Idea Types"
+		name="Ideas Type"
 		res_model="idea.type"
 		view_mode="tree,form"/>
 	
