@@ -23,6 +23,15 @@
                 ('department_id.manager_id.user_id', 'in', [user.id])]
             </field>
         </record>
+
+        <record id="types_user_rule" model="ir.rule">
+            <field name="name">Idea Types only for Department</field>
+            <field name="model_id" ref="model_idea_type"/>
+            <field name="domain_force">
+                ['|', ('department_list.member_ids.user_id', 'in', [user.id]),
+                ('department_list.manager_id.user_id', 'in', [user.id])]
+            </field>
+        </record>
     </data>
 
 </odoo>
