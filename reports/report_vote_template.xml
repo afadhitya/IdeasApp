@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="report_vote_ideas">
+    <t t-call="report.html_container">
+      <t t-call="report.external_layout">
+        <div class="page">
+          <!-- Report page content -->
+          <table class="table table-striped">
+            <tr>
+              <th>Title</th>
+              <th>Employee</th>
+              <th>Create Date</th>
+            </tr>
+            <t t-foreach="docs" t-as="o">
+              <tr>
+              <td class="col-xs-6">
+                <span t-field="o.name"/>
+              </td>
+              <td class="col-xs-3">
+                <span t-field="o.employee_ids"/>
+              </td>
+              <td class="col-xs-3">
+                <span t-field="o.date_create"/>
+              </td>
+              </tr>
+            </t>
+          </table>
+        </div>
+      </t>
+    </t>
+  </template>
+</odoo>

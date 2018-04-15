@@ -1,19 +1,12 @@
 <!--Custom report.-->
 <odoo>
-  <report id="action_vote_report"
-      string="Print Ideas"
-      model="vote.app"
-      report_type="qweb-html"
-      name="ideas_app.report_vote_template"
-  />
-
-  <template id="report_vote_template">
-    <t t-call="report.html-container">
-      <t t-call="report.external_layout">
-        <div class="page">
-          <!-- Report page content -->
-        </div>
-      </t>
-    </t>
-  </template>
+  <data>
+    <report id="action_vote_report"
+        string="Print Ideas"
+        model="vote.app"
+        report_type="qweb-html"
+        file="report_vote_ideas"
+        name="Ideas_app.report_vote_ideas"
+    />
+  </data>
 </odoo>
