@@ -9,7 +9,6 @@
 		'views/vote_menu.xml',
 		'views/vote_view.xml',
 		'views/idea_type_view.xml'
-		'reports/report_vote.xml'
 	],
 	'application': True,
 }
