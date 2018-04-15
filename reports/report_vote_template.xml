@@ -10,6 +10,7 @@
               <th>Title</th>
               <th>Employee</th>
               <th>Create Date</th>
+              <th>Total Vote</th>
             </tr>
             <t t-foreach="docs" t-as="o">
               <tr>
@@ -21,6 +22,9 @@
               </td>
               <td class="col-xs-3">
                 <span t-field="o.date_create"/>
+              </td>
+              <td class="col-xs-3">
+                <span t-field="o.total_vote"/>
               </td>
               </tr>
             </t>
