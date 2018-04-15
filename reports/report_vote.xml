@@ -1,0 +1,12 @@
+<!--Custom report.-->
+<odoo>
+  <data>
+    <report
+        id="report_vote"
+        string="Vote / Ideas"
+        model="vote.app"
+        report_type="qweb-pdf"
+        name="ideas_app.report_vote"
+    />
+  </data>
+</odoo>
