@@ -58,6 +58,9 @@
 							</h1>
 						</group>
 					</div>
+					<div name="buttons" class="oe_right oe_button_box">
+
+					</div>
 					<group name="group_bottom">
 						<group name="group_left">
 							<field name="employee_ids"/>
@@ -96,6 +99,7 @@
 				<field name="idea_id"/>
 				<field name="date_create"/>
 				<field name="date_deadline"/>
+				<field name="total_vote"/>
 			</tree>
 		</field>
 	</record>
