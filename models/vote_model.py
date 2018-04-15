@@ -10,7 +10,7 @@ class VoteApp(models.Model):
 	_inherit = ['mail.thread']
 
 	name = fields.Char('Title', required=True)
-	employee_ids = fields.Many2one('hr.employee', string='Employee', track_visibility='onchange')
+	employee_ids = fields.Many2one('res.users', string='Employee', track_visibility='onchange', default=lambda self: self.env.user,readonly=True)
 	date_create = fields.Date(string='Create Date', default=datetime.now())
 	company_id = fields.Many2one('res.company', 'Company')
 	department_id = fields.Many2one('hr.department', string='Department')
