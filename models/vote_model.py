@@ -25,7 +25,7 @@ class VoteApp(models.Model):
         ('closed', 'Closed'),
         ('reject', 'Reject'),
         ], string='Status', readonly=True, copy=False, index=True, track_visibility='onchange', default='new')
-
+	total_vote = fields.Integer(compute='_compute_total_vote', string='Total Vote')
 
 	@api.one
 	def do_approve(self):
@@ -59,7 +59,10 @@ class VoteApp(models.Model):
 		self.write({'state': 'closed'})
 		return True
 
-
+	@api.multi
+	def _compute_total_vote(self):
+		for vote in self:
+			vote.total_vote = len(vote.vote_list)
 
 	@api.multi
 	def action_quotation_send(self):
