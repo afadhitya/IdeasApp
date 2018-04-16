@@ -10,8 +10,8 @@ class IdeaType(models.Model):
 	min_vote = fields.Integer(string='Minimum Vote', readonly=True)
 	max_vote = fields.Integer(string='Maximum Vote', readonly=True)
 	total_ideas = fields.Integer(compute='_compute_total_type_idea', string='Total Ideas', readonly=True)
+	
 	department_list = fields.Many2many('hr.department')
-
 	idea_type = fields.One2many(comodel_name='vote.app', inverse_name='idea_id', string='Idea Type')
 
 	@api.multi

@@ -101,5 +101,3 @@ class VoteApp(models.Model):
 			'target':'new',
 			'context': ctx,
 		}
-
-
