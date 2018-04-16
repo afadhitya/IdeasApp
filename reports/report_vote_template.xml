@@ -29,6 +29,8 @@
               </tr>
             </t>
           </table> -->
+          <img class="image" t-att-src="'data:image/png;base64,%s' % res_company.logo" style="border:auto;"/>
+          <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', obj.product_barcode, 600, 100)" style="width:300px;height:50px"/
           <t t-foreach="docs" t-as="o">
           <div class="row mt32 mb32" id="informations">
             <div t-if="o.name" class="col-xs-12">
@@ -54,8 +56,12 @@
               <strong>Details: </strong><p t-field="o.description"/>
             </div>
 
-            <div t-if="o.total_vote" class="col-xs-6">
+            <div t-if="o.total_vote" class="col-xs-12">
               <strong>Total Vote: </strong><p t-field="o.total_vote"/>
+            </div>
+
+            <div t-if="o.vote_list" class="col-xs-6">
+              <strong>Votes Tracked: </strong><p t-field="o.vote_list"/>
             </div>
 
 
