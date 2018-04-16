@@ -5,7 +5,7 @@
       <t t-call="report.external_layout">
         <div class="page">
           <!-- Report page content -->
-          <table class="table table-striped">
+          <!-- <table class="table table-striped">
             <tr>
               <th>Title</th>
               <th>Employee</th>
@@ -28,7 +28,39 @@
               </td>
               </tr>
             </t>
-          </table>
+          </table> -->
+          <t t-foreach="docs" t-as="o">
+          <div class="row mt32 mb32" id="informations">
+            <div t-if="o.name" class="col-xs-12">
+              <strong>Title: </strong><p t-field="o.name"/>
+            </div>
+            <div t-if="o.employee_ids" class="col-xs-6">
+              <strong>Employee: </strong><p t-field="o.employee_ids"/>
+            </div>
+
+            <div t-if="o.department_id" class="col-xs-6">
+              <strong>Department: </strong><p t-field="o.department_id"/>
+            </div>
+
+            <div t-if="o.date_create" class="col-xs-6">
+              <strong>Create Date: </strong><p t-field="o.date_create"/>
+            </div>
+
+            <div t-if="o.date_deadline" class="col-xs-6">
+              <strong>Deadline Date: </strong><p t-field="o.date_deadline"/>
+            </div>
+
+            <div t-if="o.description" class="col-xs-12">
+              <strong>Details: </strong><p t-field="o.description"/>
+            </div>
+
+            <div t-if="o.total_vote" class="col-xs-6">
+              <strong>Total Vote: </strong><p t-field="o.total_vote"/>
+            </div>
+
+
+          </div>
+        </t>
         </div>
       </t>
     </t>
