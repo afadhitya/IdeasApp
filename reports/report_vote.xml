@@ -6,7 +6,7 @@
         model="vote.app"
         report_type="qweb-html"
         file="report_vote_ideas"
-        name="Ideas_app.report_vote_ideas"
+        name="IdeasApp.report_vote_ideas"
     />
   </data>
 </odoo>
