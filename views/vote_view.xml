@@ -8,6 +8,8 @@
 			 <form string="Employee Vote">
 				<group name="group_top">
 					<field name="ideas_id"/>
+					<field name="employee"/>
+					<field name="department"/>
 					<field name="priority" widget="priority"/>
 				</group>
 				<group name="group_bottom">
@@ -133,6 +135,8 @@
 		<field name="model">wizard.vote</field>
 		<field name="arch" type="xml">
 			<tree>
+				<field name="employee"/>
+				<field name="department"/>
 				<field name="comment"/>
 				<field name="priority"/>
 			</tree>

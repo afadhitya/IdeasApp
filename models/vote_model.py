@@ -9,15 +9,25 @@ class VoteApp(models.Model):
 	_description = 'Vote Application'
 	_inherit = ['mail.thread']
 
+	@api.model
+	def _current_department(self):
+
+		resource = self.env['resource.resource'].search([('user_id','=', self.env.uid)])[0]
+		employee = self.env['hr.employee'].search([('resource_id','=', resource.id)])[0]
+
+		_logger = logging.getLogger(__name__)
+		_logger.debug('RESOURCE ID: ' + str(employee.name_related))
+		return employee.department_id
+
 	name = fields.Char('Title', required=True)
 	employee_ids = fields.Many2one('res.users', string='Employee', track_visibility='onchange', default=lambda self: self.env.user,readonly=True)
 	date_create = fields.Date(string='Create Date', default=datetime.now())
 	company_id = fields.Many2one('res.company', 'Company')
-	department_id = fields.Many2one('hr.department', string='Department')
+	department_id = fields.Many2one('hr.department', string='Department', default=_current_department, readonly=True)
 	date_deadline = fields.Date(string='Deadline',default=datetime.now() + timedelta(days=14), required=True)
 	idea_id = fields.Many2one('idea.type',string='Idea Type')
 	description = fields.Text('Notes',required=True)
-	vote_list = fields.One2many('wizard.vote','ideas_id',string='Employee Votes')
+	vote_list = fields.One2many('wizard.vote','ideas_id',string='Employee Votes', readonly=True)
 	state = fields.Selection([
         ('new', 'New'),
         ('waiting', 'Waiting for Approval'),
